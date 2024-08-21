@@ -1,0 +1,78 @@
+2024-08-21T18:24:34.269Z [[32minfo[39m]: [32mThis is HTML-based Editable Grid Component Generator v0.2[39m
+2024-08-21T18:24:34.270Z [[32minfo[39m]: [32mAttempting to generate code, test, and run user acceptance testing...[39m
+2024-08-21T18:24:34.271Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:34.272Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:34.272Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:34.272Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:34.272Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:34.273Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:34.273Z [[35merror[39m]: [35mFailed to generate code, test, and run user acceptance testing after 3 attempts.[39m
+2024-08-21T18:24:40.897Z [[32minfo[39m]: [32mThis is HTML-based Editable Grid Component Generator v0.2[39m
+2024-08-21T18:24:40.898Z [[32minfo[39m]: [32mAttempting to generate code, test, and run user acceptance testing...[39m
+2024-08-21T18:24:40.898Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:40.900Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:40.900Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:40.900Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:40.900Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:24:40.901Z [[35merror[39m]: [35mError generating code: Error: Test file not generated.[39m
+2024-08-21T18:24:40.901Z [[35merror[39m]: [35mFailed to generate code, test, and run user acceptance testing after 3 attempts.[39m
+2024-08-21T18:25:33.934Z [[32minfo[39m]: [32mThis is HTML-based Editable Grid Component Generator v0.2[39m
+2024-08-21T18:25:33.936Z [[32minfo[39m]: [32mRunning OpenAI GPT-4 to generate HTML code.[39m
+2024-08-21T18:25:47.142Z [[32minfo[39m]: [32mHTML code generation completed.[39m
+2024-08-21T18:25:47.143Z [[32minfo[39m]: [32mAttempting to generate code, test, and run user acceptance testing...[39m
+2024-08-21T18:25:47.146Z [[32minfo[39m]: [32mRunning OpenAI GPT-4 to generate test code.[39m
+2024-08-21T18:25:51.844Z [[32minfo[39m]: [32mTest code generation completed: (async () => {[39m
+[32m    // Launch the browser[39m
+[32m    const browser = await puppeteer.launch();[39m
+[32m    const page = await browser.newPage();[39m
+
+[32m    const fileUrl = `file://${outputDir}/index.html`;[39m
+[32m    [39m
+[32m    // Load the local HTML file[39m
+[32m    await page.goto(fileUrl, { waitUntil: 'networkidle0' });[39m
+[32m    [39m
+[32m    // Screenshot before interactions[39m
+[32m    await page.screenshot({ path: `${outputDir}/before_interactions.png` });[39m
+
+[32m    // Test: Check if editable cells can be focused and edited[39m
+[32m    const editableCells = await page.$$('.editable-cell');[39m
+[32m    for (let i = 0; i < editableCells.length; i++) {[39m
+[32m        await editableCells[i].click(); // Focus on the cell[39m
+[32m        await page.keyboard.type(`Test Value ${i + 1}`); // Input text[39m
+[32m    }[39m
+[32m    await page.screenshot({ path: `${outputDir}/after_editing_cells.png` });[39m
+
+[32m    // Test: Check if the first row can be edited[39m
+[32m    await editableCells[0].click();[39m
+[32m    await page.keyboard.press('Backspace');[39m
+[32m    await page.keyboard.type('Edited Value');[39m
+[32m    await page.screenshot({ path: `${outputDir}/after_editing_first_row.png` });[39m
+
+[32m    // Test interaction with focus and hover visual feedback[39m
+[32m    await page.mouse.move(await editableCells[1].boundingBox().x, await editableCells[1].boundingBox().y);[39m
+[32m    await page.screenshot({ path: `${outputDir}/hover_on_second_cell.png` });[39m
+
+[32m    // Close the browser[39m
+[32m    await browser.close();[39m
+[32m})();[39m
+2024-08-21T18:25:51.846Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:25:51.848Z [[32minfo[39m]: [32mRunning OpenAI generated HTML test automation code.[39m
+2024-08-21T18:25:51.850Z [[32minfo[39m]: [32mTest code execution successful.[39m
+2024-08-21T18:25:51.857Z [[32minfo[39m]: [32mCode generation, testing, and user acceptance testing completed successfully.[39m
+2024-08-21T18:26:01.631Z [[32minfo[39m]: [32mThis is HTML-based Editable Grid Component Generator v0.2[39m
+2024-08-21T18:26:01.632Z [[32minfo[39m]: [32mRunning OpenAI GPT-4 to generate HTML code.[39m
+2024-08-21T18:26:17.043Z [[32minfo[39m]: [32mHTML code generation completed.[39m
+2024-08-21T18:26:17.044Z [[32minfo[39m]: [32mAttempting to generate code, test, and run user acceptance testing...[39m
+2024-08-21T18:26:17.047Z [[32minfo[39m]: [32mRunning OpenAI GPT-4 to generate test code.[39m
+2024-08-21T18:26:21.701Z [[35merror[39m]: [35mNo HTML code block found.[39m
+2024-08-21T18:26:21.701Z [[32minfo[39m]: [32mTest code generation completed: [39m
+2024-08-21T18:26:21.702Z [[32minfo[39m]: [32mHTML testing code generation successful.[39m
+2024-08-21T18:26:21.703Z [[32minfo[39m]: [32mRunning OpenAI generated HTML test automation code.[39m
+2024-08-21T18:26:21.703Z [[32minfo[39m]: [32mTest code execution successful.[39m
+2024-08-21T18:26:21.705Z [[32minfo[39m]: [32mApplying OpenAI vision API to PNG file: after_editing_cells.png[39m
+2024-08-21T18:26:27.684Z [[32minfo[39m]: [32mUAT feedback saved to: /Users/av/repos/ninjapivot/dev/output//after_editing_cells.png.md[39m
+2024-08-21T18:26:27.684Z [[32minfo[39m]: [32mApplying OpenAI vision API to PNG file: after_editing_first_row.png[39m
+2024-08-21T18:26:33.313Z [[32minfo[39m]: [32mUAT feedback saved to: /Users/av/repos/ninjapivot/dev/output//after_editing_first_row.png.md[39m
+2024-08-21T18:26:33.314Z [[32minfo[39m]: [32mApplying OpenAI vision API to PNG file: before_interactions.png[39m
+2024-08-21T18:26:40.687Z [[32minfo[39m]: [32mUAT feedback saved to: /Users/av/repos/ninjapivot/dev/output//before_interactions.png.md[39m
+2024-08-21T18:26:40.687Z [[32minfo[39m]: [32mCode generation, testing, and user acceptance testing completed successfully.[39m
