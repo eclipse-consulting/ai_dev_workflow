@@ -199,9 +199,40 @@ const requirements = {
   },
 };
 ```
-### Step 2. Requirements are used to generate HTML/JS
+### Step 2. Requirements are used to generate HTML/CSS/JS
+
+HTML component is generated using GPT:
 
 ![image](step2.png)
+
+### Step 3. Code for automating HTML/CSS/JS testing is generated
+
+Test automation code for HTML component generated using GPT:
+
+```js 
+// the test function must be an async arrow function. The logger and outputDir are available as a global variable.
+(async () => {
+    // Launch the browser
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    const fileUrl = `file://${outputDir}/index.html`;
+    
+    // Load the local HTML file
+    await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+    
+    // Screenshot the page and save it as output.png
+    await page.screenshot({ path: `${outputDir}/output.png` });
+
+    // Close the browser
+    await browser.close();
+})();%  
+```
+
+![image](output/after_editing_cells.png)
+
+
+### Step 4. 
 
 
 
