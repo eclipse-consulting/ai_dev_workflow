@@ -243,7 +243,7 @@ User Acceptance Testing of HTML component is peformed using OpenAI vision API:
 run `node grid_component.mjs` 
 
 ### Observe output
-in output director
+in output directory
 
 ## Caution
 If you are a software developer, and you automate all software development, then you will probably eventually be fired by your own software.
