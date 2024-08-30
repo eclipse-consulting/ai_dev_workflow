@@ -246,5 +246,5 @@ run `node grid_component.mjs`
 in output directory
 
 ## Caution
-If you are a software developer, and you automate all software development, then you will probably eventually be fired by your own software.
+If you are a software developer, and you automate all software development, then you will probably eventually be fired by your own software. It gets worse. Even if you are not a professional software developer, and you automate your job using software, you will probably eventually be fired by your own software.
 
